@@ -10,7 +10,7 @@ module.exports = function(){
   mongoose.set('useFindAndModify', false);
 
   // Start connecting
-  mongoose.connect('mongodb://localhost/voters');
+  mongoose.connect('mongodb://localhost/voters.csv');
 
   // Make sure we see any errors
   mongoose.connection.on('error', function(error) {
