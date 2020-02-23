@@ -11,7 +11,7 @@ module.exports = function() {
   mongoose.set('useFindAndModify', false);
 
   // Start connecting
-  mongoose.connect('mongodb://localhost/faculty');
+  mongoose.connect('mongodb://localhost/voters');
 
   // Log errors
   mongoose.connection.on('error', function(error) {

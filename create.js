@@ -1,4 +1,3 @@
-// Store some data in the faculty database
 const fs = require('fs');
 const readline = require('readline');
 const file = readline.createInterface({
@@ -10,8 +9,6 @@ const connect = require('./db');
 const Voter = require('./schema');
 
 connect();  // To the database
-
-
 
 const voters = [];
 
