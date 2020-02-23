@@ -18,16 +18,24 @@ const file = readline.createInterface({
 
 
 // Create voters database
-const voters = [];
-file.on('line', function(line) {
-  const columns = line.split(',');
-  voters.push({
-    firstName: columns[0],
-    lastName: columns[1],
-    zipCode: Number(column[2]),
-    historyString: columns[3]
+
+const voters = new Voter ({
+  file.on('line', function(line) {
+    const columns = line.split(',');
+    voters.push({
+      firstName: columns[0],
+      lastName: columns[1],
+      zipCode: Number(column[2]),
+      historyString: columns[3]
+    });
   });
+
+  file.on('close', function(){
+    process.exit(0);
+  });
+
 });
+
 
 mongoose.connection.dropDatabase()
 
