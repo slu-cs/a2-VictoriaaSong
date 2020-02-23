@@ -6,7 +6,6 @@ const file = readline.createInterface({
 });
 
 const mongoose = require('mongoose');
-
 const connect = require('./db');
 const Voter = require('./schema');
 
@@ -18,20 +17,13 @@ const voters = [];
 
 file.on('line', function(line) {
   const columns = line.split(',');
-  // const eachVoter = new Voter({
-  //   firstName: columns[0],
-  //   lastName: columns[1],
-  //   zipCode: Number(columns[2]),
-  //   historyString: columns[3]
-  // });
-  voters.push(
-    new Voter({
-      firstName: columns[0],
-      lastName: columns[1],
-      zipCode: Number(columns[2]),
-      historyString: columns[3]
-    })
-  );
+  const eachVoter = new Voter({
+    firstName: columns[0],
+    lastName: columns[1],
+    zipCode: Number(columns[2]),
+    historyString: columns[3]
+  });
+  voters.push(eachVoter);
 });
 
 file.on('close', function(){
