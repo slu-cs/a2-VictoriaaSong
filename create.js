@@ -2,9 +2,6 @@
 
 const mongoose = require('mongoose');
 
-// import the model from other files
-//const connect = require('./voters.csv');
-
 const connect = require('./db');
 const Voter = require('./schema');
 
@@ -24,7 +21,7 @@ file.on('line', function(line) {
   const eachVoter = new Voter({
     firstName: columns[0],
     lastName: columns[1],
-    zipCode: Number(column[2]),
+    zipCode: Number(columns[2]),
     historyString: columns[3]
   });
   voters.push(eachVoter);
