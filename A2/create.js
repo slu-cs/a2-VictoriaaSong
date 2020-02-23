@@ -10,6 +10,7 @@ const file = readline.createInterface({
   input: fs.createReadStream('voters.csv')
 });
 
+const connect = require('./db');
 const Voter = require('./schema');
 
 connect();  // To the database

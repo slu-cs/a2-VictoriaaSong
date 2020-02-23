@@ -11,7 +11,7 @@ module.exports = function() {
   mongoose.set('useFindAndModify', false);
 
   // Start connecting
-  mongoose.connect('mongodb://localhost/voters');
+  mongoose.connect('mongodb://localhost/voters.csv');
 
   // Log errors
   mongoose.connection.on('error', function(error) {
