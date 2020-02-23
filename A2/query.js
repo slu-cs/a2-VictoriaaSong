@@ -2,9 +2,14 @@
 
 const mongoose = require('mongoose');
 //const connect = require('./voters.csv');
+const fs = require('fs');
+const readline = require('readline');
+const file = readline.createInterface({
+  input: fs.createReadStream('majors.csv')
+});
 const Voter = require('./schema');
 
-//connect();  // To the database
+file();  // To the database
 
 
 const queries = [

@@ -11,7 +11,7 @@ const file = readline.createInterface({
 });
 const Voter = require('./schema');
 
-connect();  // To the database
+file();  // To the database
 
 // Create voters database
 const voters = [];
