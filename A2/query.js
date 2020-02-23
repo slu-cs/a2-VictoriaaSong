@@ -6,15 +6,6 @@ const Voter = require('./schema');
 
 connect();  // To the database
 
-/*
-// What documents are in the collection?
-const query = Professor.find();
-query.exec(function(error, professors) {
-  if(error) console.error(error.stack);
-
-  console.log(professors);
-});
-*/
 
 const queries = [
 
@@ -25,7 +16,7 @@ const queries = [
   Voter.find().where('firstName').equals('STARR'),
 
   // How many people voted in the 2016 general election (GE16)?
-  Voter.find().where('firstName').contain('GE16'),
+  Voter.find().where('firstName').in('GE16'),
 
   // What is the last-name that comes last in the county in alphabetical order?
   Voter.find().sort('-name').limit(1),
