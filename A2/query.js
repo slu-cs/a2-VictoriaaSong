@@ -1,15 +1,17 @@
 // Store some data in the faculty database
 
 const mongoose = require('mongoose');
-//const connect = require('./voters.csv');
+
 const fs = require('fs');
 const readline = require('readline');
 const file = readline.createInterface({
   input: fs.createReadStream('majors.csv')
 });
+
+const connect = require('./db');
 const Voter = require('./schema');
 
-file();  // To the database
+connect();  // To the database
 
 
 const queries = [
