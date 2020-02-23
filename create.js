@@ -31,7 +31,7 @@ file.on('line', function(line) {
 
 mongoose.connection.dropDatabase()
 
-
+  .then(() => voters.save())
   .then(() => mongoose.connection.close())
   .then(() => console.log('Database is ready.'))
   .catch(error => console.error(error.stack));
