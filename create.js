@@ -30,20 +30,10 @@ file.on('line', function(line) {
 file.on('close', function(){
   mongoose.connection.dropDatabase()
 
-    Promise.all(voters.map(d => d.save()))
+    .then(() => Promise.all(voters.map(d => d.save())))
 
-      .then(() => mongoose.connection.close())
-      .then(() => console.log('Database is ready.'))
-      .catch(error => console.error(error.stack));
+    .then(() => mongoose.connection.close())
+    .then(() => console.log('Database is ready.'))
+    .catch(error => console.error(error.stack));
 
 });
-
-
-
-
-// mongoose.connection.dropDatabase()
-//
-//   .then(() => Promise.all(voters.map(d => d.save())))
-//   .then(() => mongoose.connection.close())
-//   .then(() => console.log('Database is ready.'))
-//   .catch(error => console.error(error.stack));
