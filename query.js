@@ -24,7 +24,7 @@ const queries = [
   Voter.find({'historyString':{$regex:"GE16"}}),
 
   // What is the last-name that comes last in the county in alphabetical order?
-  Voter.find().sort('-name').limit(1),
+  Voter.find().sort('name').limit(1),
 
   // How many zip codes does the county contain?
   Voter.distinct('zipCode')
