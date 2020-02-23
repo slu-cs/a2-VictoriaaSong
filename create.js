@@ -1,4 +1,9 @@
 // Store some data in the faculty database
+const fs = require('fs');
+const readline = require('readline');
+const file = readline.createInterface({
+  input: fs.createReadStream('voters.csv')
+});
 
 const mongoose = require('mongoose');
 
@@ -7,11 +12,6 @@ const Voter = require('./schema');
 
 connect();  // To the database
 
-const fs = require('fs');
-const readline = require('readline');
-const file = readline.createInterface({
-  input: fs.createReadStream('voters.csv')
-});
 
 
 const voters = [];
