@@ -1,7 +1,7 @@
 // Store some data in the faculty database
 
 const mongoose = require('mongoose');
-const connect = require('./voters.csv');
+//const connect = require('./voters.csv');
 const Voter = require('./schema');
 
 connect();  // To the database
