@@ -30,9 +30,6 @@ file.on('line', function(line) {
 mongoose.connection.dropDatabase()
 
 
-  // Save the new data
-  // Run a callback incase mongoose is closed before the data is saved
-
   .then(() => mongoose.connection.close())
   .then(() => console.log('Database is ready.'))
   .catch(error => console.error(error.stack));
