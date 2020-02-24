@@ -1,4 +1,3 @@
-// Store some data in the faculty database
 const fs = require('fs');
 const readline = require('readline');
 const file = readline.createInterface({
