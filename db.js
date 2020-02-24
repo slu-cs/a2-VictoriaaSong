@@ -1,5 +1,3 @@
-// This script provides a function for connecting to the database.
-
 const mongoose = require('mongoose');
 
 module.exports = function() {
